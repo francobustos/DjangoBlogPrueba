@@ -23,3 +23,4 @@ class AuthorAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Author, AuthorAdmin)
+admin.site.register(Post)
