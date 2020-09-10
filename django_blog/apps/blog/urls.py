@@ -7,4 +7,5 @@ urlpatterns = [
     path('anime/', anime, name = 'anime'),
     path('piano/', piano, name = 'piano'),
     path('literatura/', literature, name = 'literature'),
+    path('<slug:slug>/', detailsPost, name = 'details_post'),
 ]
