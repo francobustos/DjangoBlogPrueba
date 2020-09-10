@@ -1,16 +1,34 @@
 from django.shortcuts import render
+from .models import Post, Category
 
 def home(request):
-    return render(request, 'index.html')
+    posts = Post.objects.filter(state = True)
+    return render(request, 'index.html',{'posts':posts})
 
 def generals(request):
-    return render(request, 'generals.html')
+    posts = Post.objects.filter(
+        state = True,
+        category = Category.objects.get(name = 'General')
+    )
+    return render(request, 'generals.html',{'posts':posts})
 
 def anime(request):
-    return render(request, 'anime.html')
+    posts = Post.objects.filter(
+        state = True,
+        category = Category.objects.get(name = 'Anime')
+    )
+    return render(request, 'anime.html',{'posts':posts})
 
 def piano(request):
-    return render(request, 'piano.html')
+    posts = Post.objects.filter(
+        state = True,
+        category = Category.objects.get(name = 'Piano')
+    )
+    return render(request, 'piano.html',{'posts':posts})
 
 def literature(request):
-    return render(request, 'literature.html')
+    posts = Post.objects.filter(
+        state = True,
+        category = Category.objects.get(name = 'Literatura')
+    )
+    return render(request, 'literature.html',{'posts':posts})
